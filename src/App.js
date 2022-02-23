@@ -1,12 +1,13 @@
 import NavBar from './components/NavBar'
-import Main from './components/Main'
+import ItemListContainer from './components/ItemListContainer'
 import Footer from './components/Footer'
 
 const App = () => {
+    const saludo = "¡Bienvenidos a nuestra tienda de productos Apple!"
     return (
         <>
             <NavBar/>
-            <Main/>
+            <ItemListContainer greeting={saludo}/>
             <Footer/>
         </>
     )
