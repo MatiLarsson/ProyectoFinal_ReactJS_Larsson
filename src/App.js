@@ -4,7 +4,7 @@ import Footer from './components/Footer'
 
 const App = () => {
 
-    const saludo = "¡Bienvenidos a la tienda de Boba Fett!"
+    const saludo = "¡Bienvenidos a la tienda!"
 
     return (
         <>
