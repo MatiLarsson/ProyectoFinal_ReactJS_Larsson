@@ -3,7 +3,9 @@ import ItemListContainer from './components/ItemListContainer'
 import Footer from './components/Footer'
 
 const App = () => {
-    const saludo = "¡Bienvenidos a nuestra tienda de productos Apple!"
+
+    const saludo = "¡Bienvenidos a la tienda de Boba Fett!"
+
     return (
         <>
             <NavBar/>

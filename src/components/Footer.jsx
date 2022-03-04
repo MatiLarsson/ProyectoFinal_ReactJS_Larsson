@@ -1,7 +1,9 @@
+import disney from '../assets/images/disney.svg'
+
 const Footer = () => {
     return (
         <footer>
-            <h2>Mi Footer</h2>
+            <img alt='disney logo' src={disney}/>
             <p>&copy; copyright 2022 Matias Larsson</p>
             <p>Todos los derechos reservados</p>
         </footer>

@@ -4,7 +4,7 @@ const NavBar = () => {
     return (
         <header>
             <span className="brand">
-                <a href="https://es.reactjs.org/" target="blank">iStore</a>
+                <a href="https://es.reactjs.org/" target="blank">STORE</a>
             </span>
             <nav>
                 <ul>
