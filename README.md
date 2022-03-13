@@ -68,3 +68,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Resumen del proyecto
+
+Se elige como temática la implementacián de una tienda virtual de latas de cervezas. Todos los productos se venden en packs de 6 latas. Se ofrecen cuatro variedades/categorías de cervezas: rubias, negras, rojas, y de trigo.
+
+### Se incorporan las siguientes librerías en adición a las pedidas en clase
+
+styled-components: Utilizada para estilar los botones del contador en el componente Button, utilizado en ItemCount.
+react-toastify: Utilizada para dar una confirmacion al usuario al agregar producto/s a su carrito, y para notificar el éxito o fracaso en la carga del archivo json con la información de los prodctos al solicitar el mismo.
+react-bootstrap-icons: Utilizada para crear el logo del "cart widget".

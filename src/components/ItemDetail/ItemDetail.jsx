@@ -5,11 +5,12 @@ const ItemDetail = ({item}) => {
       <div className="itemDetail">
         <img src={item.imageUrl} alt={item.title}/>
         <div className="detail">
-            <h4 className="detail__title">{item.title}</h4>
-            <h5 className="detail__description">{item.description}</h5>
-            <span>{item.precio}</span>
+            <h2 className="detail__title">{item.title}</h2>
+            <p className="detail__description">{item.description}</p>
+            <p className="detail__origin">Origen: {item.origin}</p>
+            <p className="detail__price">Precio: ${item.price}</p>
             <div className="detail__counter">
-              <ItemCount stock={item.stock} initial={(item.stock >=1 ) ? 1 : 0}/>
+              <ItemCount stock={item.stock} initial={(item.stock >=1 ) ? 1 : 0} item={item}/>
             </div>
             <p className="detail__stock">Cantidad disponible: {item.stock}</p>
         </div>

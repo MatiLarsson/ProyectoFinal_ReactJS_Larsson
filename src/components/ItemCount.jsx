@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Button } from './styled-components/Button'
+import { toast } from 'react-toastify'
 
-const ItemCount = ({stock, initial}) => {
+const ItemCount = ({stock, initial, item}) => {
 
     const [count, setCount] = useState(initial)
 
@@ -16,7 +17,15 @@ const ItemCount = ({stock, initial}) => {
     }
 
     function onAdd(){
-        alert(`Agregaste ${count} productos a tu carrito`);
+        toast.success(`Agregaste ${count} pack${(count > 1) ? 's' : ''} de cerveza ${item.title} a tu carrito`, {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });
         setCount(initial);
     }
 
