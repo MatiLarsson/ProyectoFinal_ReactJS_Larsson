@@ -60,6 +60,12 @@
             flex-direction: column;
             align-items: center;
             margin-top: 2rem;
+            .loader{
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
             .greeting{
                 color: #444;
                 font-weight: 300;
@@ -109,6 +115,9 @@
                         flex-grow: 1;
                         font-weight: bold;
                     }
+                    .price{
+                        flex-grow: 1;
+                    }
                     .goToDetail{
                         margin-top: .5rem;
                         margin-bottom: .2rem;
@@ -149,8 +158,10 @@
                     flex-grow: 1;
                 }
                 .detail__counter{
+                    height: 5rem;
                     display: flex;
                     justify-content: center;
+                    align-items: center;
                     width: 60%;
                     background-color: rgb(136, 185, 179);
                     border-radius: 3px;

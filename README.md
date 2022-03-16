@@ -78,3 +78,4 @@ Se elige como temática la implementacián de una tienda virtual de latas de cer
 styled-components: Utilizada para estilar los botones del contador en el componente Button, utilizado en ItemCount.
 react-toastify: Utilizada para dar una confirmacion al usuario al agregar producto/s a su carrito, y para notificar el éxito o fracaso en la carga del archivo json con la información de los prodctos al solicitar el mismo.
 react-bootstrap-icons: Utilizada para crear el logo del "cart widget".
+lottie-react: Utilizada para incorporar animaciones para el loader.
