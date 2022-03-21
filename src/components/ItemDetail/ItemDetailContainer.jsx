@@ -8,7 +8,7 @@ import Loading from '../../assets/loading.json'
 
 const getItem = (id) => {
   return new Promise((res) => {
-    setTimeout(() => res(Products.find(item => item.id === Number(id))), 2000)
+    setTimeout(() => res(Products.find(item => item.id === Number(id))), 500)
   })
 }
 

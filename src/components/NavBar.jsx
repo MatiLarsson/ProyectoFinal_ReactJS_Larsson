@@ -1,7 +1,12 @@
 import CartWidget from "./CartWidget"
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
+import { useContext } from "react"
+import { context } from '../context/CartContext'
 
 const NavBar = () => {
+
+    const { totalQuantityCalc } = useContext(context)
+
     return (
         <header>
             <div className="brand">
@@ -10,20 +15,27 @@ const NavBar = () => {
             <nav>
                 <ul>
                     <li>
-                        <Link to="/category/rubia" className="nav__link">Blondes</Link>
+                        <NavLink to="/category/rubia" className={({ isActive }) => isActive ? "nav__link active" : "nav__link"}>Blondes</NavLink>
                     </li>
                     <li>
-                        <Link to="/category/negra" className="nav__link">Blacks</Link>
+                        <NavLink to="/category/negra" className="nav__link">Blacks</NavLink>
                     </li>
                     <li>
-                        <Link to="/category/roja" className="nav__link">Reds</Link>
+                        <NavLink to="/category/roja" className="nav__link">Reds</NavLink>
                     </li>
                     <li>
-                        <Link to="/category/trigo" className="nav__link">Wheat</Link>
+                        <NavLink to="/category/trigo" className="nav__link">Wheat</NavLink>
                     </li>
-                    <li>
-                        <Link to="/cart" className="nav__link"><CartWidget/></Link>
-                    </li>
+                    {
+                        totalQuantityCalc() > 0
+                        &&
+                            <li>
+                                <NavLink to="/cart" className="nav__link cartWidgetContainer">
+                                    <CartWidget className='cartWidget'/>
+                                    <p className="cartCounter">{ totalQuantityCalc() }</p>
+                                </NavLink>
+                            </li>
+                    }
                 </ul>
             </nav>
         </header>

@@ -73,9 +73,16 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 Se elige como temática la implementacián de una tienda virtual de latas de cervezas. Todos los productos se venden en packs de 6 latas. Se ofrecen cuatro variedades/categorías de cervezas: rubias, negras, rojas, y de trigo.
 
+### Aspectos a considerar
+
+De acuerdo a lo sugerido por el profesor se reemplaza, en el componente ItemDetail.jsx, el ocultamiento del boton "Add to cart" (al clickear) por un useNavigate que lleva automáticamente a la página '/cart', ahorrándole al usuario el 'click' en el botón 'Terminar Compra' (sugerido por las consignas).
+
 ### Se incorporan las siguientes librerías en adición a las pedidas en clase
 
-styled-components: Utilizada para estilar los botones del contador en el componente Button, utilizado en ItemCount.
-react-toastify: Utilizada para dar una confirmacion al usuario al agregar producto/s a su carrito, y para notificar el éxito o fracaso en la carga del archivo json con la información de los prodctos al solicitar el mismo.
-react-bootstrap-icons: Utilizada para crear el logo del "cart widget".
-lottie-react: Utilizada para incorporar animaciones para el loader.
+<u>styled-components:</u> Utilizada para estilar los botones del contador en el componente Button, utilizado en ItemCount.
+
+<u>react-toastify:</u> Utilizada para dar una confirmacion al usuario al agregar producto/s a su carrito, y para notificar el éxito o fracaso en la carga del archivo json con la información de los prodctos al solicitar el mismo.
+
+<u>react-bootstrap-icons:</u> Utilizada para crear el logo del "cart widget".
+
+<u>lottie-react:</u> Utilizada para incorporar animaciones para el loader.

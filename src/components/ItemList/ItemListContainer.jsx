@@ -10,7 +10,7 @@ const saludo = "The one and only online beer store | Homer's choice |  From the 
 
 const getItems = (id) => {
   return new Promise((res) => {
-    setTimeout(() => res(id ? Products.filter(item => item.category === id) : Products), 2000)
+    setTimeout(() => res(id ? Products.filter(item => item.category === id) : Products), 500)
   })
 }
 
