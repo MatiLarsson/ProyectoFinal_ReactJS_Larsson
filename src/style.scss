@@ -52,7 +52,6 @@
                                 border-bottom: 4px solid #09f;
                             }
                             &.cartWidgetContainer{
-                                width: 40px;
                                 display: flex;
                                 justify-content: flex-start;
                                 align-items: center;
@@ -60,7 +59,7 @@
                                     width: 20px;
                                 }
                                 .cartCounter{
-                                    width: 20px;
+                                    margin-left: 5px;
                                     text-align: center;
                                     font-size: 1rem;
                                 }
@@ -198,24 +197,59 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            .cartList{
+            span{
+                margin-bottom: 1rem;
+                font-size: 1.5rem;
+                font-weight: 700;
+            }
+            .cartTable{
+                text-align: center;
+                width: 80%;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                .cartHeaders{
+                    background-color: lightblue;
+                    border-radius: 3px;
+                    box-shadow: 0 0 2px;
+                    font-weight: 700;
+                }
+                td{
+                    width: 8rem;
+                }
                 .cartItem{
                     display: flex;
                     justify-content: space-around;
                     align-items: center;
                     margin: 1rem 0;
                     .cartImage{
-                        width: 40px;
-                        height: 40px;
+                        width: 50px;
+                        height: 50px;
                         object-fit: contain;
                     }
                     p{
-                        margin: 0 1rem;
+                        margin: 1rem 1rem;
+                    }
+                    .trash{
+                        transition: all .1s;
+                        &:hover{
+                            transform: scale(1.1);
+                            cursor: pointer;
+                        }
                     }
                 }
+            }
+            .cartButtons{
+                margin: 2rem auto;
+                width: 30%;
+                display: flex;
+                justify-content: space-around;
+                .cartButton{
+                    width: 10rem;
+                }
+            }
+            .linkToStore{
+                margin-top: 2rem;
             }
         }
         footer{

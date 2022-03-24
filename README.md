@@ -73,10 +73,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 Se elige como temática la implementacián de una tienda virtual de latas de cervezas. Todos los productos se venden en packs de 6 latas. Se ofrecen cuatro variedades/categorías de cervezas: rubias, negras, rojas, y de trigo.
 
-### Aspectos a considerar
-
-De acuerdo a lo sugerido por el profesor se reemplaza, en el componente ItemDetail.jsx, el ocultamiento del boton "Add to cart" (al clickear) por un useNavigate que lleva automáticamente a la página '/cart', ahorrándole al usuario el 'click' en el botón 'Terminar Compra' (sugerido por las consignas).
-
 ### Se incorporan las siguientes librerías en adición a las pedidas en clase
 
 <u>styled-components:</u> Utilizada para estilar los botones del contador en el componente Button, utilizado en ItemCount.

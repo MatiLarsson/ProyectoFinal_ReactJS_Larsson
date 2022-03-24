@@ -26,16 +26,12 @@ const NavBar = () => {
                     <li>
                         <NavLink to="/category/trigo" className="nav__link">Wheat</NavLink>
                     </li>
-                    {
-                        totalQuantityCalc() > 0
-                        &&
-                            <li>
-                                <NavLink to="/cart" className="nav__link cartWidgetContainer">
-                                    <CartWidget className='cartWidget'/>
-                                    <p className="cartCounter">{ totalQuantityCalc() }</p>
-                                </NavLink>
-                            </li>
-                    }
+                    <li>
+                        <NavLink to="/cart" className="nav__link cartWidgetContainer">
+                            <CartWidget className='cartWidget'/>
+                            { totalQuantityCalc() > 0 && <p className="cartCounter">{ totalQuantityCalc() }</p> }
+                        </NavLink>
+                    </li>
                 </ul>
             </nav>
         </header>

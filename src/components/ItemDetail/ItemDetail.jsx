@@ -1,27 +1,29 @@
 import ItemCount from "../ItemCount"
-import { toast } from 'react-toastify'
+import { Slide, toast } from 'react-toastify'
 import { useContext } from "react"
-import { useNavigate } from 'react-router-dom'
 import { context } from '../../context/CartContext'
+import { Button } from "../styled-components/Button"
+import { Link } from "react-router-dom"
 
 const ItemDetail = ({item}) => {
 
-  const { addItem } = useContext(context)
+  const { addItem, isInCart } = useContext(context)
 
-  let navigate = useNavigate()
+  const currencyFormat = new Intl.NumberFormat('es-AR', {style: 'currency', currency: 'ARS'})
 
   function onAdd(count){
     addItem(item, count)
     toast.success(`Agregaste ${count} pack${(count > 1) ? 's' : ''} de cerveza ${item.title} a tu carrito`, {
-      position: "top-center",
+      position: "top-right",
       autoClose: 2000,
       hideProgressBar: true,
       closeOnClick: true,
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
+      theme: 'colored',
+      transition: Slide
     })
-    navigate('/cart')
   }
 
   return (
@@ -31,9 +33,15 @@ const ItemDetail = ({item}) => {
             <h2 className="detail__title">{item.title}</h2>
             <p className="detail__description">{item.description}</p>
             <p className="detail__origin">Origen: {item.origin}</p>
-            <p className="detail__price">Precio: ${item.price}</p>
+            <p className="detail__price">Precio: {currencyFormat.format(item.price)}</p>
             <div className="detail__counter">
-              <ItemCount stock={item.stock} initial={1} onAdd={onAdd}/>
+              {
+                isInCart(item.id)
+                ? <Link to='/cart'>
+                    <Button primary>Terminar Compra</Button>
+                  </Link>
+                : <ItemCount stock={item.stock} initial={1} onAdd={onAdd}/>
+              }
             </div>
             <p className="detail__stock">Cantidad disponible: {item.stock}</p>
         </div>
