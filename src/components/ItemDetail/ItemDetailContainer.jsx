@@ -1,16 +1,10 @@
 import { useState, useEffect } from 'react'
-import Products from '../../resources/Products'
 import ItemDetail from './ItemDetail'
 import { toast } from 'react-toastify'
 import { useParams } from 'react-router-dom'
 import Lottie from 'lottie-react'
 import Loading from '../../assets/loading.json'
-
-const getItem = (id) => {
-  return new Promise((res) => {
-    setTimeout(() => res(Products.find(item => item.id === Number(id))), 500)
-  })
-}
+import { getItem } from '../../resources/Firebase'
 
 const options = {
   animationData: Loading,
@@ -25,7 +19,7 @@ function ItemDetailContainer() {
 
   const [itemToDetail, setItemToDetail] = useState({})
   const [loading, setLoading] = useState(true)
-  const {idItem} = useParams()
+  const { idItem } = useParams()
 
   useEffect(() => {
     setLoading(true)

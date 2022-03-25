@@ -1,18 +1,12 @@
 import { useState, useEffect} from 'react'
 import ItemList from "./ItemList"
-import Products from '../../resources/Products'
 import { toast } from 'react-toastify'
 import { useParams } from 'react-router-dom'
 import Lottie from 'lottie-react'
 import Loading from '../../assets/loading.json'
+import { getItems, getItemsByCategory } from '../../resources/Firebase'
 
 const saludo = "The one and only online beer store | Homer's choice |  From the brewer to your fridge with a click"
-
-const getItems = (id) => {
-  return new Promise((res) => {
-    setTimeout(() => res(id ? Products.filter(item => item.category === id) : Products), 500)
-  })
-}
 
 const options = {
   animationData: Loading,
@@ -27,20 +21,21 @@ const ItemListContainer = () => {
 
   const [items, setItems] = useState([])
   const [loading, setLoading] = useState(true)
-  const {idCategory} = useParams()
+  const { idCategory } = useParams()
 
   useEffect(() => {
     setLoading(true)
-    getItems(idCategory)
-    .then((items) => {
-      setItems(items)
-      })
-    .catch(() => {
-      toast.error("Error while loading products!")
-    })
-    .finally(() => {
-      setLoading(false)
-    })
+    if (idCategory) {
+      getItemsByCategory(idCategory)
+      .then((items) => {setItems(items)})
+      .catch(() => {toast.error("Error while loading products!")})
+      .finally(() => {setLoading(false)})
+    } else {
+      getItems()
+      .then((items) => {setItems(items)})
+      .catch(() => {toast.error("Error while loading products!")})
+      .finally(() => {setLoading(false)})
+    }
   }, [idCategory])
 
   return (
