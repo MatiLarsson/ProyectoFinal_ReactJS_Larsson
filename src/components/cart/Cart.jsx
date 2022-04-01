@@ -17,24 +17,28 @@ const Cart = () => {
         ? <>
             <span>Carrito</span>
             <table className="cartTable">
-              <tr className='cartHeaders'>
-                <td></td>
-                <td>Producto</td>
-                <td></td>
-                <td>Cantidad</td>
-                <td></td>
-                <td>Precio</td>
-                <td></td>
-                <td>Subtotal</td>
-                <td></td>
-              </tr>
-              { cart.map(item => <CartItem key={item.id} item={item} removeItem={removeItem}/>) }
+              <thead className='cartHeaders'>
+                <tr>
+                  <td></td>
+                  <td>Producto</td>
+                  <td></td>
+                  <td>Cantidad</td>
+                  <td></td>
+                  <td>Precio</td>
+                  <td></td>
+                  <td>Subtotal</td>
+                  <td></td>
+                </tr>
+              </thead>
+              <tbody>
+                { cart.map(item => <CartItem key={item.id} item={item} removeItem={removeItem}/>) }
+              </tbody>
             </table>
             <span className='total'>Total de la compra: { currencyFormat.format(totalCartValueCalc()) }</span>
             <div className='cartButtons'>
               <Button primary className='cartButton' onClick={() => clear()}>Vaciar carrito</Button>
               <Link to='/checkout'>
-                <Button primary className='cartButton' onClick={() => clear()}>Proceder a Checkout</Button>
+                <Button primary className='cartButton'>Proceder a Checkout</Button>
               </Link>
             </div>
           </>

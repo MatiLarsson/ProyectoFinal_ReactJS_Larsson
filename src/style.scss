@@ -146,6 +146,38 @@
                     }
                 }
             }
+            .formContainer{
+                .formGroup{
+                    margin: 1rem;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    .formLabel{
+                        margin: 1rem;
+                        font-weight: bold;
+                    }
+                    .formInput{
+                        margin: 0.5rem;
+                        width: 20rem;
+                        height: 2rem;
+                        border-radius: 3px;
+                        border: 1px solid #444;
+                        padding: 0.5rem;
+                        font-size: small;
+                        transition: all .2s;
+                        &:focus{
+                            border: 1px solid #09f;
+                        }
+                    }
+                    .orderSubmit{
+                        margin: 1rem 0;
+                        height: 48px;
+                    }
+                }
+            }
+            .checkoutInfo{
+                margin: 1rem 0;
+            }
         }
         .itemDetail{
             width: 60%;

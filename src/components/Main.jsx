@@ -3,6 +3,7 @@ import ItemDetailContainer from './ItemDetail/ItemDetailContainer'
 import ItemListContainer from './ItemList/ItemListContainer'
 import Cart from '../components/cart/Cart'
 import Checkout from './Checkout'
+/* import TrackOrders from './TrackOrders' */
 
 const Main = () => {
   return (
@@ -12,6 +13,7 @@ const Main = () => {
         <Route path="/item/:idItem" element={<ItemDetailContainer/>} />
         <Route path="/cart" element={<Cart/>} />
         <Route path="/checkout" element={<Checkout/>} />
+        {/* <Route path="/track" element={<TrackOrders/>} /> */}
     </Routes>
   )
 }

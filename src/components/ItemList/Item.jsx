@@ -15,7 +15,7 @@ const Item = ({item}) => {
     addItem(item, count)
 
     toast.success(`Agregaste ${count} pack${(count > 1) ? 's' : ''} de cerveza ${item.title} a tu carrito`, {
-      position: "top-right",
+      position: "top-center",
       autoClose: 1500,
       hideProgressBar: true,
       closeOnClick: true,
